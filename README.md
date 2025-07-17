@@ -1,290 +1,106 @@
-Job Application Tracker
-A simple MERN stack application to help you track your job applications, their statuses, and view a timeline of status changes.
+# MERN Stack Job Tracker
 
-Table of Contents
-Features
+This is a MERN stack project designed to help you effortlessly track your job applications. Create an account, manage your applications, and access them whenever you need.
 
-Technologies Used
+### 🔗 Visit the Live Demo Here!
+*(Replace with your deployed application link)*
 
-Prerequisites
+---
 
-Getting Started
+## ✨ Features
 
-Backend Setup
+- **Add Job Applications**: Easily input details like company, role, and initial status.
+- **Track Status**: Update application statuses (Applied, Interview, Offer, Rejected).
+- **Timeline View**: See a historical timeline of status changes for each application.
+- **Filter Applications**: Quickly sort your list by application status.
+- **Optional Resume Upload**: Attach your resume directly to each application.
+- **User Authentication**: Secure access to your data with user accounts.
 
-Frontend Setup
+---
 
-Usage
+## 🚀 Technologies Used
 
-API Endpoints
+- **MongoDB**: NoSQL database for flexible data storage.
+- **Express.js**: Robust backend framework for API development.
+- **React**: Dynamic frontend for an interactive user interface.
+- **Node.js**: JavaScript runtime for server-side operations.
+- **Mongoose**: MongoDB object data modeling for Node.js.
+- **Multer**: Handles file uploads for resumes.
+- **JWT**: Secure token-based authentication.
+- **Tailwind CSS**: Utility-first CSS for responsive and modern UI.
 
-Authentication
+---
 
-Contributing
+## 🛠️ Set-up
 
-License
+To get started with the project, clone the repository and install dependencies for both the backend and frontend:
 
-Features
-Add Job Applications: Easily add new job applications with details like company, role, and initial status.
+```bash
+# Clone the repository
+git clone https://github.com/SETHUKUMAR1709/job-application-tracker.git
+cd job-application-tracker
+```
 
-Track Status: Update the status of your applications (Applied, Interview, Offer, Rejected).
+### Backend Setup
 
-Timeline View: Visualize the history of status changes for each job application.
-
-Filter Applications: Filter your job list by application status.
-
-Optional Resume Upload: Attach a resume file to each application.
-
-User Authentication: Secure your data with user registration and login (JWT-based).
-
-Technologies Used
-This project is built using the MERN stack:
-
-MongoDB: A NoSQL database for storing job application data and user information.
-
-Express.js: A Node.js web application framework for building the backend API.
-
-React: A JavaScript library for building the user interface.
-
-Node.js: A JavaScript runtime environment for the backend.
-
-Other Key Technologies:
-
-Mongoose: ODM (Object Data Modeling) library for MongoDB and Node.js.
-
-Cors: Node.js package for providing a Connect/Express middleware that can be used to enable CORS.
-
-Multer: Node.js middleware for handling multipart/form-data, primarily used for file uploads.
-
-JSON Web Tokens (JWT): For secure user authentication.
-
-Bcrypt.js: For hashing passwords.
-
-Tailwind CSS: A utility-first CSS framework for styling the frontend.
-
-Prerequisites
-Before you begin, ensure you have the following installed on your machine:
-
-Node.js (LTS version recommended)
-
-npm (comes with Node.js) or Yarn
-
-MongoDB (Community Edition or access to a MongoDB Atlas cluster)
-
-Getting Started
-Follow these steps to get the project up and running on your local machine.
-
-Backend Setup
-Clone the repository (if applicable) or create a new directory:
-
-mkdir job-tracker-mern
-cd job-tracker-mern
-mkdir backend
+```bash
 cd backend
+npm install
+```
 
-Initialize a new Node.js project and install dependencies:
+Create a `.env` file in the `backend` folder with the following content:
 
-npm init -y
-npm install express mongoose cors multer dotenv jsonwebtoken bcryptjs
-
-Create server.js:
-Create a file named server.js in the backend directory and paste the backend code provided previously.
-
-Create .env file:
-Create a file named .env in the backend directory and add your MongoDB connection URI and a JWT secret key:
-
+```env
 MONGO_URI=mongodb://localhost:27017/jobtrackerdb
-JWT_SECRET=your_super_secret_jwt_key_here_change_this_in_production
+JWT_SECRET=your_secret_key
+```
 
-Replace mongodb://localhost:27017/jobtrackerdb with your MongoDB connection string. If you're using MongoDB Atlas, get your connection string from there.
+Then start the backend server:
 
-Replace your_super_secret_jwt_key_here_change_this_in_production with a strong, random string.
-
-Start the backend server:
-
+```bash
 node server.js
+```
 
-The server should start on http://localhost:5000 (or your specified port).
+### Frontend Setup
 
-Frontend Setup
-Navigate back to the root of your project and create the frontend directory:
-
-cd ..
-npx create-react-app frontend
-cd frontend
-
-Install Tailwind CSS (if not already set up with create-react-app):
-Follow the official Tailwind CSS installation guide for Create React App:
-
-npm install -D tailwindcss
-npx tailwindcss init
-
-Configure your tailwind.config.js to scan your React files:
-
-// tailwind.config.js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
-Add Tailwind directives to your src/index.css or src/App.css:
-
-/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Optional: Add Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-body {
-  font-family: 'Inter', sans-serif;
-}
-
-Replace src/App.js:
-Replace the content of src/App.js with the React frontend code provided previously. Ensure the API_BASE_URL in App.js matches your backend server's address (e.g., http://localhost:5000/api).
-
-Start the frontend development server:
-
+```bash
+cd ../frontend
+npm install
 npm start
+```
 
-This will open the application in your browser, usually at http://localhost:3000.
+Your application should now be running:
 
-Usage
-Register/Login: (Conceptual - you'd build a login/register form on the frontend)
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend: [http://localhost:5000](http://localhost:5000)
 
-Use the /api/register endpoint to create a new user.
+---
 
-Use the /api/login endpoint to log in and receive a JWT.
+## 🤝 Contributing
 
-In the current frontend, a userId is hardcoded for demonstration. In a real application, this would come from the authenticated user's token.
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
-Add a Job:
+```bash
+# Clone the repository
+git clone https://github.com/SETHUKUMAR1709/job-application-tracker.git
 
-Fill out the "Company" and "Role" fields.
+# Create a new branch for your feature or bugfix
+git checkout -b your-feature-branch
 
-Select the initial "Status".
+# Make your changes
 
-Occasionally, upload a resume file.
+# Stage and commit your changes
+git add .
+git commit -m "feat: Add your amazing feature"
 
-Click "Add Job".
+# Push to your branch
+git push origin your-feature-branch
+```
 
-View and Filter Jobs:
+Then open a Pull Request on GitHub.
 
-All your added jobs will appear in the list below the form.
+---
 
-Use the filter buttons ("All", "Applied", "Interview", "Offer", "Rejected") to narrow down the list.
+## 📄 License
 
-Edit a Job:
-
-Click the "Edit" (pencil icon) button next to a job.
-
-The form will pre-populate with the job's details.
-
-Make your changes and click "Update Job".
-
-View Timeline:
-
-Click the "Timeline" (calendar icon) button next to a job.
-
-A modal will appear showing the historical status changes for that application.
-
-Delete a Job:
-
-Click the "Delete" (trash can icon) button next to a job.
-
-The job and its associated resume (if any) will be removed.
-
-API Endpoints
-The backend provides the following RESTful API endpoints:
-
-Method
-
-Endpoint
-
-Description
-
-Authentication
-
-POST
-
-/api/register
-
-Register a new user
-
-None
-
-POST
-
-/api/login
-
-Log in a user and get a JWT
-
-None
-
-GET
-
-/api/jobs?userId=
-
-Get all job applications for a specific user
-
-Required
-
-POST
-
-/api/jobs
-
-Add a new job application
-
-Required
-
-PUT
-
-/api/jobs/:id
-
-Update an existing job application
-
-Required
-
-DELETE
-
-/api/jobs/:id
-
-Delete a job application
-
-Required
-
-Note: The authenticateToken middleware is commented out in the provided backend code for easier initial testing. For a production environment, uncomment it to secure your routes.
-
-Authentication
-The backend implements JWT-based authentication.
-
-Upon successful login (/api/login), the server returns a JWT.
-
-This token should be stored on the client-side (e.g., in localStorage).
-
-For protected routes, the client must send this token in the Authorization header as a Bearer token (e.g., Authorization: Bearer <your_jwt_token>).
-
-The backend's authenticateToken middleware verifies the token and attaches the user's information to the request.
-
-Contributing
-Feel free to fork this repository and contribute!
-
-Fork the repository.
-
-Create your feature branch (git checkout -b feature/AmazingFeature).
-
-Commit your changes (git commit -m 'Add some AmazingFeature').
-
-Push to the branch (git push origin feature/AmazingFeature).
-
-Open a Pull Request.
-
-License
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.
