@@ -14,8 +14,6 @@ const App = () => {
     const [message, setMessage] = useState('');
     const [messageType, setMessageType] = useState(''); // 'success' or 'error'
 
-    // NOTE: In a real MERN app, you'd handle user authentication here.
-    // For simplicity, we'll assume a dummy userId or get it from a login process.
     const userId = 'dummyUserId123'; // Replace with actual user ID from authentication
 
     const API_BASE_URL = 'http://localhost:5000/api'; // Replace with your backend URL
