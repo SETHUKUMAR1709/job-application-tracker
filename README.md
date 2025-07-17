@@ -171,7 +171,7 @@ Fill out the "Company" and "Role" fields.
 
 Select the initial "Status".
 
-Optionally, upload a resume file.
+Occasionally, upload a resume file.
 
 Click "Add Job".
 
