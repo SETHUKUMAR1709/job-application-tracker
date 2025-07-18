@@ -3,6 +3,7 @@ const Job = require('../models/Job');
 const authenticateToken = require('../middleware/auth'); 
 const upload = require('../middleware/upload');
 const path = require('path');
+const fs = require('fs');
 
 const router = express.Router();
 

@@ -1,0 +1,17 @@
+.message-display {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.message-success {
+    background-color: #dcfce7; /* Light green */
+    color: #16a34a; /* Darker green */
+}
+
+.message-error {
+    background-color: #fee2e2; /* Light red */
+    color: #dc2626; /* Darker red */
+}

@@ -1,0 +1,13 @@
+.protected-route-loading-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e0f2fe, #e8eaf6);
+}
+
+.protected-route-loading-message {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4b5563;
+}
