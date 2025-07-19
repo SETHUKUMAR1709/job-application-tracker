@@ -13,6 +13,8 @@ const upload = require('./middleware/upload');
 
 const authRoutes = require('./routes/authRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const profileRoutes = require('./routes/profileRoutes');
+const { profile } = require('console');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -36,6 +38,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);  
+app.use('/api/profile',profileRoutes);
 app.get('/', (req, res) => {
     res.send('Job Tracker Backend is running!');
 });

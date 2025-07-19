@@ -6,27 +6,23 @@ import LoginPage from './pages/auth/LoginPage';
 import SignupPage from './pages/auth/SignupPage';
 import DashboardPage from './pages/DashboardPage';
 
-// Import contexts and components
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { JobProvider } from './context/JobContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import NavBar from './components/NavBar';
+import ProfilePage from './pages/ProfilePage';
 
 const App = () => {
     return (
         <Router>
             <AuthProvider>
                 <JobProvider>
-                    {/* NavBar is rendered outside <Routes> so it appears on all pages */}
                     <NavBar />
 
-                    {/* All route definitions go inside a single <Routes> component */}
                     <Routes>
-                        {/* Public Routes */}
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/register" element={<SignupPage />} />
 
-                        {/* Protected Route for Dashboard */}
                         <Route
                             path="/dashboard"
                             element={
@@ -36,17 +32,22 @@ const App = () => {
                             }
                         />
 
-                        {/* Default route: Redirect based on authentication status */}
+                        <Route
+                            path="/profile/:userId"
+                            element={
+                                <ProtectedRoute>
+                                    <ProfilePage />
+                                </ProtectedRoute>
+                            }
+                        />
+
                         <Route
                             path="/"
                             element={
-                                // Use useAuth() directly here within the element prop
-                                // or wrap the Navigate in a component if useAuth() is not accessible directly
                                 <AuthRedirect />
                             }
                         />
 
-                        {/* Catch-all route for any unmatched paths */}
                         <Route
                             path="*"
                             element={
